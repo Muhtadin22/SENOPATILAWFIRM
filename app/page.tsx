@@ -19,8 +19,7 @@ import {
   Mail,
   Landmark,
   Quote,
-  History,
-  CalendarCheck2
+  History
 } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -144,10 +143,10 @@ export default function HomePage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              
+
               {/* Left Column: Headline & CTA */}
               <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-100/90 border border-sky-200 text-sky-900 text-xs font-semibold uppercase tracking-widest shadow-sm">
+                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-100/90 border border-sky-200 text-sky-900 text-xs font-semibold uppercase tracking-widest shadow-xs">
                   <Sparkles className="h-4 w-4 text-sky-700" />
                   <span>Advokasi Presisi & Perlindungan Aset Strategis</span>
                 </div>
@@ -159,7 +158,7 @@ export default function HomePage() {
                 </h1>
 
                 <p className="text-slate-600 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  **Senopati Rahmad & Partners** memberikan pendampingan hukum berstandar internasional bagi entitas korporasi, BUMN, dan individu dalam menghadapi sengketa komersial bernilai tinggi.
+                  <strong className="font-semibold text-slate-900">Senopati Rahmad & Partners</strong> memberikan pendampingan hukum berstandar internasional bagi entitas korporasi, BUMN, dan individu dalam menghadapi sengketa komersial bernilai tinggi.
                 </p>
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -172,7 +171,7 @@ export default function HomePage() {
 
                   <Link
                     href="/layanan-hukum"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white border border-slate-200 hover:border-sky-300 text-slate-700 font-semibold px-6 py-4 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-md"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white border border-slate-200 hover:border-sky-300 text-slate-700 font-semibold px-6 py-4 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-xs hover:shadow-md"
                   >
                     Jelajahi Area Praktik <ArrowRight className="h-4 w-4 text-sky-700" />
                   </Link>
@@ -204,10 +203,11 @@ export default function HomePage() {
                     alt="Dr. Rahmad Senopati, S.H., M.H."
                     fill
                     priority
+                    unoptimized
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-500" />
-                  
+
                   <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-5 rounded-2xl border border-sky-100 shadow-xl space-y-1">
                     <p className="font-serif text-base font-bold text-slate-900">Dr. Rahmad Senopati, S.H., M.H.</p>
                     <p className="text-xs text-amber-600 font-semibold uppercase tracking-wider">Managing Partner & Founder</p>
@@ -262,7 +262,7 @@ export default function HomePage() {
            ========================================================================= */}
         <section className="py-20 bg-white border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            
+
             <div className="text-center max-w-3xl mx-auto space-y-2">
               <span className="text-xs text-amber-600 uppercase tracking-widest font-bold">Layanan Utama</span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">Area Praktik Hukum Spesialis</h2>
@@ -278,7 +278,7 @@ export default function HomePage() {
                   className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 hover:border-sky-300 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div className="space-y-4">
-                    <div className="p-3.5 bg-sky-100/80 text-sky-800 border border-sky-200 rounded-xl w-fit group-hover:bg-sky-700 group-hover:text-white transition-colors duration-300 shadow-sm">
+                    <div className="p-3.5 bg-sky-100/80 text-sky-800 border border-sky-200 rounded-xl w-fit group-hover:bg-sky-700 group-hover:text-white transition-colors duration-300 shadow-xs">
                       <item.icon className="h-6 w-6" />
                     </div>
                     <h3 className="font-serif text-lg font-bold text-slate-900 group-hover:text-sky-700 transition-colors duration-300">
@@ -310,7 +310,7 @@ export default function HomePage() {
            ========================================================================= */}
         <section className="py-20 bg-slate-900 text-white border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            
+
             <div className="text-center max-w-3xl mx-auto space-y-2">
               <span className="text-xs text-amber-400 font-bold uppercase tracking-widest flex items-center justify-center gap-1.5">
                 <History className="h-4 w-4" /> Rekam Jejak
@@ -329,7 +329,7 @@ export default function HomePage() {
                 >
                   <div className="space-y-3">
                     <span className="text-amber-400 font-serif text-2xl font-bold block">{item.value}</span>
-                    <span className="text-[10px] text-sky-400 bg-sky-950/80 border border-sky-800 px-2.5 py-1 rounded uppercase tracking-wider font-semibold inline-block">
+                    <span className="text-[10px] text-sky-400 bg-sky-950/80 border border-sky-800 px-2.5 py-1 rounded-sm uppercase tracking-wider font-semibold inline-block">
                       {item.category}
                     </span>
                     <h3 className="font-serif text-base font-bold text-white leading-snug">{item.title}</h3>
@@ -352,7 +352,7 @@ export default function HomePage() {
            ========================================================================= */}
         <section className="py-20 bg-slate-50 border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            
+
             <div className="text-center max-w-3xl mx-auto space-y-2">
               <span className="text-xs text-teal-700 uppercase tracking-widest font-bold">Komitmen Pelayanan</span>
               <h2 className="font-serif text-3xl font-bold text-slate-900">Mengapa Memilih Senopati Rahmad & Partners?</h2>
@@ -362,7 +362,7 @@ export default function HomePage() {
               {features.map((feature, idx) => (
                 <div
                   key={idx}
-                  className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:border-amber-400 hover:shadow-md transition-all duration-300 space-y-3"
+                  className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-amber-400 hover:shadow-md transition-all duration-300 space-y-3"
                 >
                   <div className="p-3 bg-amber-100/80 text-amber-700 border border-amber-200 rounded-xl w-fit">
                     <feature.icon className="h-6 w-6" />
@@ -384,12 +384,13 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white rounded-3xl p-8 lg:p-12 relative overflow-hidden shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                
+
                 <div className="lg:col-span-5 relative aspect-[3/4] max-w-md mx-auto w-full rounded-2xl overflow-hidden border-2 border-amber-500/40">
                   <Image
                     src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop"
                     alt="Dr. Rahmad Senopati, S.H., M.H."
                     fill
+                    unoptimized
                     className="object-cover object-top"
                   />
                 </div>
@@ -432,7 +433,7 @@ export default function HomePage() {
            ========================================================================= */}
         <section className="py-20 bg-slate-50 border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            
+
             <div className="text-center max-w-3xl mx-auto space-y-2">
               <span className="text-xs text-sky-700 font-bold uppercase tracking-widest">Konsultasi Langsung</span>
               <h2 className="font-serif text-3xl font-bold text-slate-900">Hubungi Sekretariat Hukum Kami</h2>
@@ -443,7 +444,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Card 1: Alamat Kantor */}
-              <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 hover:border-sky-300 transition">
+              <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-2xs space-y-4 hover:border-sky-300 transition">
                 <div className="p-3.5 bg-sky-100 text-sky-800 rounded-xl w-fit">
                   <Landmark className="h-6 w-6" />
                 </div>
@@ -459,7 +460,7 @@ export default function HomePage() {
               </div>
 
               {/* Card 2: Hotline WhatsApp */}
-              <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 hover:border-amber-400 transition">
+              <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-2xs space-y-4 hover:border-amber-400 transition">
                 <div className="p-3.5 bg-amber-100 text-amber-800 rounded-xl w-fit">
                   <PhoneCall className="h-6 w-6" />
                 </div>
@@ -480,7 +481,7 @@ export default function HomePage() {
               </div>
 
               {/* Card 3: Email & Sekretariat */}
-              <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 hover:border-teal-400 transition">
+              <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-2xs space-y-4 hover:border-teal-400 transition">
                 <div className="p-3.5 bg-teal-100 text-teal-800 rounded-xl w-fit">
                   <Mail className="h-6 w-6" />
                 </div>
@@ -508,7 +509,7 @@ export default function HomePage() {
            ========================================================================= */}
         <section className="py-20 bg-white border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            
+
             <div className="text-center max-w-3xl mx-auto space-y-2">
               <span className="text-xs text-amber-600 font-bold uppercase tracking-widest">Kepercayaan Korporasi</span>
               <h2 className="font-serif text-3xl font-bold text-slate-900">Tanggapan Klien Kami</h2>
@@ -538,7 +539,7 @@ export default function HomePage() {
            ========================================================================= */}
         <section className="py-20 bg-slate-50 border-b border-slate-200/80">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-            
+
             <div className="text-center space-y-2">
               <span className="text-xs text-sky-700 font-bold uppercase tracking-widest flex items-center justify-center gap-1.5">
                 <HelpCircle className="h-4 w-4" /> Pertanyaan Sering Diajukan
@@ -548,7 +549,7 @@ export default function HomePage() {
 
             <div className="space-y-4">
               {faqs.map((faq, idx) => (
-                <div key={idx} className="bg-white border border-slate-200 rounded-2xl p-6 space-y-2 shadow-sm">
+                <div key={idx} className="bg-white border border-slate-200 rounded-2xl p-6 space-y-2 shadow-2xs">
                   <h3 className="font-serif text-base font-bold text-slate-900 flex items-start gap-3">
                     <span className="text-amber-600 font-sans text-sm font-bold mt-0.5">Q.</span>
                     <span>{faq.q}</span>
