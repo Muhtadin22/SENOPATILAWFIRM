@@ -1,0 +1,99 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+}
+
+enum AttorneyRole {
+  MANAGING_PARTNER
+  SENIOR_PARTNER
+  PARTNER
+  SENIOR_ASSOCIATE
+  ASSOCIATE
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(ADMIN)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  icon        String?
+  shortDesc   String   @db.Text
+  fullDesc    String   @db.LongText
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Attorney {
+  id           String       @id @default(cuid())
+  name         String
+  role         AttorneyRole @default(ASSOCIATE)
+  title        String       // e.g., "S.H., M.H."
+  bio          String       @db.LongText
+  photoUrl     String?
+  email        String?
+  phone        String?
+  education    Json         // Array string riwayat pendidikan
+  expertise    Json         // Array string area keahlian
+  trackRecords Json?        // Array rekam jejak kasus
+  order        Int          @default(0)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+}
+
+model Article {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  content     String   @db.LongText
+  excerpt     String   @db.Text
+  coverImage  String?
+  authorName  String   @default("Tim Redaksi Senopati Rahmad")
+  published   Boolean  @default(true)
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Consultation {
+  id        String   @id @default(cuid())
+  fullName  String
+  email     String
+  phone     String
+  subject   String
+  message   String   @db.Text
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model SiteSetting {
+  id           String   @id @default("default")
+  firmName     String   @default("Senopati Rahmad & Partners")
+  tagline      String   @default("Advocates & Legal Consultants")
+  heroTitle    String   @db.Text
+  heroSubtitle String   @db.Text
+  phone        String
+  whatsapp     String
+  email        String
+  address      String   @db.Text
+  mapsEmbedUrl String   @db.Text
+  updatedAt    DateTime @updatedAt
+}
